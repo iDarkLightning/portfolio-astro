@@ -1,11 +1,42 @@
 ---
+export interface Props {
+  absolute?: boolean;
+}
+
+const { absolute } = Astro.props as Props;
+const selected = Astro.url.pathname;
+
+const routes = [
+  {
+    route: "/",
+    name: "Home",
+  },
+  {
+    route: "/about",
+    name: "About",
+  },
+  {
+    route: "/work",
+    name: "Work",
+  },
+  {
+    route: "/writing",
+    name: "Writing",
+  },
+];
 ---
 
-<nav class="absolute py-4">
+<nav class={`pt-6 ${absolute && "absolute"}`}>
   <div class="flex gap-6 opacity-80">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/work">Work</a>
-    <a href="/writing">Writing</a>
+    {
+      routes.map(({ route, name }) => (
+        <a
+          href={route}
+          class={selected === route ? "text-accent" : "" + "font-medium "}
+        >
+          {name}
+        </a>
+      ))
+    }
   </div>
 </nav>
