@@ -1,0 +1,47 @@
+---
+import ContactLink from "../components/contact-link.astro";
+import Nav from "../components/nav.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Nirjhor Nath">
+  <main class="h-screen">
+    <section class="w-8/12 mx-auto h-full overflow-hidden">
+      <Nav />
+      <div class="flex flex-col gap-2 justify-center h-full">
+        <h1 class="font-bold text-white text-6xl">Nirjhor Nath</h1>
+        <p class="text-subtext text-2xl w-9/12">
+          I am an aspiring software engineer, nurturing my love for technology
+          by developing software to facilitate exceptional digital experiences.
+        </p>
+        <a
+          class="border-accent border-solid border-2 w-36 p-3 mt-12 text-white font-medium text-center rounded-md"
+          href="/work"
+          >View my Work
+        </a>
+        <div class="flex gap-4 mt-4">
+          <ContactLink
+            to="https://twitter.com/iDarkThunder"
+            alt="Twitter"
+            src="/twitter.svg"
+          />
+          <ContactLink
+            to="https://github.com/iDarkLightning"
+            alt="GitHub"
+            src="/github.svg"
+          />
+          <ContactLink
+            to="https://linkedin.com/nirjhor.nath"
+            alt="LinkedIn"
+            src="/linkedin.svg"
+          />
+          <ContactLink
+            to="mailto:nirjhor.nath@gmail.com"
+            alt="Mail"
+            src="/mail.svg"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
