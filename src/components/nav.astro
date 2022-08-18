@@ -4,20 +4,21 @@ export interface Props {
 }
 
 const { absolute } = Astro.props as Props;
-const selected = Astro.url.pathname;
-
 const routes = [
   {
     route: "/",
     name: "Home",
+    color: "accent",
   },
   {
     route: "/about",
     name: "About",
+    color: "red-300",
   },
   {
     route: "/work",
     name: "Work",
+    color: "green-300",
   },
   {
     route: "/writing",
@@ -29,11 +30,8 @@ const routes = [
 <nav class={`pt-6 ${absolute && "absolute"}`}>
   <div class="flex gap-6 opacity-80">
     {
-      routes.map(({ route, name }) => (
-        <a
-          href={route}
-          class={selected === route ? "text-accent" : "" + "font-medium "}
-        >
+      routes.map(({ route, name, color }) => (
+        <a href={route} class={`focus:text-${color}` + " font-medium"}>
           {name}
         </a>
       ))

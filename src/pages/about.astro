@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getAboutMe } from "../lib/cms";
+
+const data = await getAboutMe();
 ---
 
 <Layout title="Nirjhor Nath - About">
@@ -8,5 +11,6 @@ import Layout from "../layouts/Layout.astro";
       About me<span class="text-red-300">.</span>
     </h1>
     <div class="w-32 h-1 bg-red-300"></div>
+    <Fragment set:html={data.aboutMe} />
   </div>
 </Layout>
