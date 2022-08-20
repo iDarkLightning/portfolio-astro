@@ -1,12 +1,9 @@
 ---
-import Nav from "../components/nav.astro";
-
 export interface Props {
   title: string;
-  absoluteNav?: boolean;
 }
 
-const { title, absoluteNav } = Astro.props as Props;
+const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -20,8 +17,7 @@ const { title, absoluteNav } = Astro.props as Props;
   </head>
   <body>
     <main class="h-screen">
-      <section class="w-10/12 md:w-8/12 mx-auto h-full overflow-hidden">
-        <Nav absolute={!!absoluteNav} />
+      <section class="w-10/12 md:w-8/12 max-w-[100rem] m-auto h-full">
         <slot />
       </section>
     </main>
@@ -39,7 +35,9 @@ const { title, absoluteNav } = Astro.props as Props;
       html {
         font-family: system-ui, sans-serif;
         font-size: var(--font-size-base);
-        @apply bg-background text-white;
+        background: #181818;
+        @apply text-white;
+        color-scheme: dark;
       }
 
       body {

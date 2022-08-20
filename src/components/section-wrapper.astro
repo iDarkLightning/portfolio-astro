@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  color: string;
+}
+
+const { title, color } = Astro.props as Props;
+---
+
+<section class="flex flex-col gap-6 mt-12">
+  <h1 class="text-4xl font-semibold">
+    {title}<span>.</span>
+  </h1>
+  <slot />
+</section>
+
+<style define:vars={{ color }}>
+  span {
+    color: var(--color);
+  }
+
+  .themed-bg {
+    background-color: var(--color);
+  }
+</style>

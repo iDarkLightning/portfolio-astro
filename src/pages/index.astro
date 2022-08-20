@@ -1,9 +1,11 @@
 ---
 import ContactLink from "../components/contact-link.astro";
 import Layout from "../layouts/Layout.astro";
+import { Nav } from "../components/nav";
 ---
 
-<Layout title="Nirjhor Nath" absoluteNav>
+<Layout title="Nirjhor Nath">
+  <Nav client:load absolute route="/" />
   <div class="flex flex-col gap-2 justify-center h-full">
     <h1 class="font-bold text-white text-6xl">Nirjhor Nath</h1>
     <p class="text-subtext text-lg md:text-xl lg:w-9/12 max-w-3xl">
