@@ -2,17 +2,14 @@ const routes = [
   {
     route: "/",
     name: "Home",
-    color: "text-accent",
   },
   {
     route: "/work",
     name: "Work",
-    color: "text-cyan-200",
   },
   {
     route: "/about",
     name: "About",
-    color: "text-red-300",
   },
   {
     route: "/writing",

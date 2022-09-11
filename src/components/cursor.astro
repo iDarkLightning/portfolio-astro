@@ -1,0 +1,29 @@
+---
+---
+
+<div class="cursor" id="cursor"></div>
+
+<style>
+  .cursor {
+    position: fixed;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    z-index: 10000;
+    border: 2px solid rgb(255, 255, 255);
+    opacity: 60%;
+    height: 50px;
+    width: 50px;
+    transition: all 300ms ease-out;
+  }
+</style>
+
+<script is:inline>
+  const cursor = document.getElementById("cursor");
+  document.body.addEventListener("mousemove", function (e) {
+    (cursor.style.left = e.clientX + "px"),
+      (cursor.style.top = e.clientY + "px");
+  });
+</script>
