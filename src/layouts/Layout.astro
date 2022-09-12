@@ -27,8 +27,8 @@ const { title } = Astro.props as Props;
     <style is:global>
       @font-face {
         font-family: Bigilla;
-        font-weight: bold;
-        src: url("/fonts/Bigilla-Bold.otf") format("otf");
+        font-weight: 700;
+        src: url("/fonts/Bigilla-Bold.woff") format("woff");
       }
       @font-face {
         font-family: Messina;
@@ -46,7 +46,7 @@ const { title } = Astro.props as Props;
       }
 
       h1 {
-        font-family: Bigilla !important;
+        font-family: "Bigilla" !important;
       }
 
       p,
