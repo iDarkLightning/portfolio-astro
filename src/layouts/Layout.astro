@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import Cursor from "../components/cursor.astro";
 export interface Props {
   title: string;
@@ -7,13 +8,13 @@ export interface Props {
 const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <script src="/app.js" type="module" is:inline></script>
     <title>{title}</title>
   </head>
   <body>
@@ -21,43 +22,28 @@ const { title } = Astro.props as Props;
       <section
         class="w-10/12 md:w-8/12 lg:w-7/12 xl:w-5/12 max-w-[100rem] m-auto h-full"
       >
-        <slot />
+        <slot name="nav" />
+        <span id="main">
+          <slot />
+        </span>
       </section>
     </main>
-    <style is:global>
-      @font-face {
-        font-family: Bigilla;
-        font-weight: 700;
-        src: url("/fonts/Bigilla-Bold.woff") format("woff");
-      }
-      @font-face {
-        font-family: Messina;
-        src: url("/fonts/MessinaSans-Regular.woff") format("woff");
-      }
-      @font-face {
-        font-family: Messina;
-        font-weight: 500;
-        src: url("/fonts/MessinaSans-SemiBold.woff") format("woff");
+    <Cursor />
+    <style>
+      #main {
+        animation: main 100ms;
       }
 
-      html {
-        background-color: theme("colors.background");
-        color: white;
-      }
-
-      h1 {
-        font-family: "Bigilla" !important;
-      }
-
-      p,
-      a {
-        font-family: Messina !important;
-      }
-
-      a {
-        font-weight: 500;
+      @keyframes main {
+        0% {
+          opacity: 0;
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        100% {
+          opacity: 100;
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
       }
     </style>
-    <Cursor />
   </body>
 </html>

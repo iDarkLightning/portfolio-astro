@@ -26,4 +26,13 @@
     (cursor.style.left = e.clientX + "px"),
       (cursor.style.top = e.clientY + "px");
   });
+
+  document.body.addEventListener("click", function (e) {
+    cursor.style.transform = "scale(2)";
+    cursor.style.opacity = "0";
+    setTimeout(() => {
+      cursor.style.transform = "scale(1)";
+      cursor.style.opacity = "100";
+    }, 450);
+  });
 </script>

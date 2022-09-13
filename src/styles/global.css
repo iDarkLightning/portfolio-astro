@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Bigilla;
+  font-weight: 700;
+  src: url("/fonts/Bigilla-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: Messina;
+  src: url("/fonts/MessinaSans-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: Messina;
+  font-weight: 500;
+  src: url("/fonts/MessinaSans-SemiBold.woff") format("woff");
+}
+
+html {
+  background-color: theme("colors.background");
+  color: white;
+}
+
+h1 {
+  font-family: "Bigilla" !important;
+}
+
+p,
+a {
+  font-family: Messina !important;
+}
+
+a {
+  font-weight: 500;
+}

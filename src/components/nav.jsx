@@ -1,9 +1,5 @@
 const routes = [
   {
-    route: "/",
-    name: "Home",
-  },
-  {
     route: "/work",
     name: "Work",
   },
@@ -18,7 +14,11 @@ const routes = [
 ];
 
 export const Nav = (props) => (
-  <nav className={`pt-6 ${props.absolute && "absolute"}`}>
+  <nav className={`pt-6 flex justify-between`}>
+    <a className="font-bold text-2xl" href="/">
+      Nirjhor Nath.
+    </a>
+
     <div className="flex gap-6 opacity-80">
       {routes.map(({ route, name, color }) => (
         <a
