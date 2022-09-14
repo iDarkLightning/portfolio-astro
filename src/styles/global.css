@@ -20,6 +20,7 @@
 html {
   background-color: theme("colors.background");
   color: white;
+  color-scheme: dark;
 }
 
 h1 {

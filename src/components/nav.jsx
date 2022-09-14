@@ -15,7 +15,7 @@ const routes = [
 
 export const Nav = (props) => (
   <nav
-    className={`pt-6 flex flex-col gap-2 md:flex-row justify-between md:items-center w-full ${
+    className={`pt-16 flex flex-col gap-2 md:flex-row justify-between md:items-center w-full ${
       props.absolute && "absolute"
     }`}
   >
