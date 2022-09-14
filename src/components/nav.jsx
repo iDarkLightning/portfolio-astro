@@ -14,7 +14,11 @@ const routes = [
 ];
 
 export const Nav = (props) => (
-  <nav className={`pt-6 flex justify-between`}>
+  <nav
+    className={`pt-6 flex flex-col gap-2 md:flex-row justify-between md:items-center w-full ${
+      props.absolute && "absolute"
+    }`}
+  >
     <a className="font-bold text-2xl" href="/">
       Nirjhor Nath.
     </a>
