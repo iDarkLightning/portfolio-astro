@@ -15,19 +15,20 @@ const routes = [
 
 export const Nav = (props) => (
   <nav
-    className={`pt-16 flex flex-col gap-2 md:flex-row justify-between md:items-center w-full ${
+    className={`py-8 flex flex-col w-full md:flex-row md:items-center justify-between  ${
       props.absolute && "absolute"
     }`}
   >
     <a className="font-bold text-2xl" href="/">
       Nirjhor Nath.
     </a>
-
-    <div className="flex gap-6 opacity-80">
-      {routes.map(({ route, name, color }) => (
+    <div className="flex gap-6 opacity-80 ml-[-0.5rem]">
+      {routes.map(({ route, name }) => (
         <a
           href={route}
-          className={`font-medium ${route === props.route ? color : ""}`}
+          className={`font-medium p-2 rounded-lg transition-colors ${
+            route === props.route ? "bg-[#131827]" : ""
+          } hover:bg-[#131827]`}
         >
           {name}
         </a>

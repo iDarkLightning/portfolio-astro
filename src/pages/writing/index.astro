@@ -11,7 +11,7 @@ allPosts = allPosts.sort(
 ---
 
 <Layout title="Writing">
-  <Nav slot="nav" />
+  <Nav slot="nav" client:visible route="/writing" />
   <h1 class="text-4xl mt-16">Writing</h1>
   <p class="opacity-70 mt-2">
     A collection of my thoughts on tech, design, development, and my life!
@@ -20,7 +20,7 @@ allPosts = allPosts.sort(
   <hr class="mt-4 border-dotted opacity-80" />
   <div class="mt-6 flex flex-col gap-6 mb-2">
     {
-      allPosts.map((post, index) => {
+      allPosts.map((post) => {
         const href = `/writing/${post.file
           .split("/")
           .pop()
@@ -34,7 +34,7 @@ allPosts = allPosts.sort(
                   <h2 class="font-bold text-xl">{post.frontmatter.title}</h2>
                   <p>{post.frontmatter.publishDate}</p>
                 </div>
-                <p class="opacity-70">{post.frontmatter.description}</p>
+                <p class="opacity-70 mt-2">{post.frontmatter.description}</p>
               </div>
             </a>
             {allPosts.length > 1 && <hr class="opacity-80 border-dotted" />}

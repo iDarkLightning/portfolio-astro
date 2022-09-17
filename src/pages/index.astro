@@ -5,8 +5,8 @@ import Layout from "../layouts/Layout.astro";
 import { Nav } from "../components/nav";
 ---
 
-<Layout title="Nirjhor Nath">
-  <Nav client:visible absolute slot="nav" absolute />
+<Layout title="Nirjhor Nath" className="h-full">
+  <Nav client:load slot="nav" route="/" absolute />
   <div class="flex flex-col justify-center h-full">
     <h1 class="text-5xl sm:text-6xl md:text-[5.0625rem]">Hi, I'm Nirjhor</h1>
     <div class="mt-6 flex flex-col gap-4 opacity-80">
