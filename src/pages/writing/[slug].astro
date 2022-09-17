@@ -1,7 +1,6 @@
 ---
 import { Nav } from "../../components/nav";
 import Layout from "../../layouts/Layout.astro";
-import getPostData from "../../lib/getPostData";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../data/blog-posts/*.md");
@@ -12,14 +11,26 @@ export async function getStaticPaths() {
 }
 
 const { Content, frontmatter } = Astro.props.post;
-const { title, description, publishDate } = frontmatter;
-const { slug } = getPostData(Astro.props.post);
-const permalink = `${Astro.site?.href}${slug}`;
+const { title, publishDate } = frontmatter;
 ---
 
 <Layout title={title}>
-  <Nav client:load />
-  <h1>{title}</h1>
-  <h2>{description}</h2>
-  <Content />
+  <Nav client:load slot="nav" />
+  <div class="mt-8 pb-8">
+    <div>
+      <h1 class="title text-4xl">{title}</h1>
+      <p class="opacity-80">
+        Posted on {publishDate}
+      </p>
+    </div>
+    <div class="mt-8 flex flex-col gap-4">
+      <Content />
+    </div>
+  </div>
 </Layout>
+<style>
+  .title {
+    font-family: Messina !important;
+    font-weight: 700;
+  }
+</style>

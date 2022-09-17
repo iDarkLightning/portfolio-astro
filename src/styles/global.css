@@ -16,6 +16,11 @@
   font-weight: 500;
   src: url("/fonts/MessinaSans-SemiBold.woff") format("woff");
 }
+@font-face {
+  font-family: Messina;
+  font-weight: 700;
+  src: url("/fonts/MessinaSans-Bold.woff") format("woff");
+}
 
 html {
   background-color: theme("colors.background");
