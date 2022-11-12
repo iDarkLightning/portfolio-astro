@@ -24,7 +24,7 @@ const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
 });
 
 export const HomeHeading: Component = () => (
-  <Motion.div initial={initial} animate={animate} transition={transition(1)}>
+  <Motion.div initial={initial} animate={animate} transition={transition(0)}>
     <Location />
     <h1 class="font-bold text-3xl">Nirjhor Nath</h1>
   </Motion.div>
