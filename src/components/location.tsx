@@ -1,25 +1,25 @@
-import { FC, useEffect, useState } from "react";
+import { createSignal, Component } from "solid-js";
 
-export const Location: FC = () => {
-  const [time, setTime] = useState<null | string>(
+export const Location: Component = () => {
+  const [time, setTime] = createSignal(
     new Date().toLocaleTimeString("en-US", {
       timeZone: "America/New_York",
     })
   );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  setInterval(
+    () =>
       setTime(
-        new Date().toLocaleTimeString("en-US", { timeZone: "America/New_York" })
-      );
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+        new Date().toLocaleTimeString("en-US", {
+          timeZone: "America/New_York",
+        })
+      ),
+    1000
+  );
 
   return (
     <div>
-      <p className="text-sm opacity-80 font-mono">{time} New York, US</p>
+      <p class="text-sm opacity-80 font-mono">{time} New York, US</p>
     </div>
   );
 };

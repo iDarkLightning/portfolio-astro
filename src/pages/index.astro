@@ -1,77 +1,23 @@
 ---
 import "../styles/global.css";
 import "@fontsource/newsreader";
-import ContactLink from "../components/contact-link.astro";
 import Layout from "../layouts/layout.astro";
-import Arrow from "../components/arrow.astro";
 import { Location } from "../components/location";
+import {
+  HomeDescription,
+  HomeHeading,
+  HomeMore,
+  HomeSubHeading,
+} from "../components/home";
 ---
 
 <Layout title="Nirjhor Nath" className="h-full">
   <div class="flex flex-col justify-center h-full gap-8">
     <div class="flex flex-col gap-2">
-      <div id="name">
-        <Location client:only />
-        <h1 class="font-bold text-3xl">Nirjhor Nath</h1>
-      </div>
-      <p class="text-2xl font-serif italic font-medium" id="magical">
-        Trying to create software that feels magical
-      </p>
+      <HomeHeading client:load />
+      <HomeSubHeading client:load />
     </div>
-    <p class="messina opacity-80 flex flex-col gap-4" id="description">
-      <span class="md:max-w-2xl">
-        Student, developer, and designer taking a pragmatic user-focused
-        approach to software development.
-      </span>
-      <span> Passionate about building technology on the bleeding edge.</span>
-    </p>
-    <div class="flex flex-col gap-4" id="contact">
-      <a class="text-2xl flex gap-2 items-center opacity-90" href="/about">
-        See More About Me
-        <Arrow />
-      </a>
-      <div class="flex gap-8">
-        <ContactLink
-          to="https://twitter.com/iDarkThunder"
-          alt="Twitter"
-          src="/twitter.svg"
-        />
-        <ContactLink
-          to="https://github.com/iDarkLightning"
-          alt="GitHub"
-          src="/github.svg"
-        />
-        <ContactLink
-          to="https://www.linkedin.com/in/nirjhor-nath-b82317232/"
-          alt="LinkedIn"
-          src="/linkedin.svg"
-        />
-      </div>
-    </div>
+    <HomeDescription client:load />
+    <HomeMore client:load />
   </div>
 </Layout>
-<style>
-  #name,
-  #magical,
-  #description,
-  #contact {
-    transform: translateY(0.5rem);
-    opacity: 0;
-  }
-</style>
-<script>
-  import { timeline } from "motion";
-
-  const action = { transform: "translateY(0)", opacity: 1 };
-
-  timeline([
-    ["#name", action, { at: "-0.2", easing: "ease-in" }],
-    ["#magical", action, { at: "-0.1", easing: "ease-in" }],
-    [
-      "#description",
-      { ...action, opacity: 0.8 },
-      { at: "-0.1", easing: "ease-in" },
-    ],
-    ["#contact", action, { at: "-0.1", easing: "ease-in" }],
-  ]);
-</script>
