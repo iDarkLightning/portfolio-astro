@@ -10,14 +10,14 @@ import { ContactLink } from "./contact-link";
 import { Arrow } from "./arrow";
 
 export const Home: Component = () => (
-  <Presence>
+  <>
     <div class="flex flex-col gap-2">
       <HomeHeading />
       <HomeSubHeading />
     </div>
     <HomeDescription />
     <HomeMore />
-  </Presence>
+  </>
 );
 
 const initial: VariantDefinition = {
@@ -30,23 +30,13 @@ const animate: VariantDefinition = {
   opacity: 1,
 };
 
-const exit: VariantDefinition = {
-  transform: "translateY(-0.5rem)",
-  opacity: 0,
-};
-
 const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
   easing: "ease-in",
   delay: multiplier * 0.1,
 });
 
 const HomeHeading: Component = () => (
-  <Motion.div
-    initial={initial}
-    animate={animate}
-    transition={transition(0)}
-    exit={exit}
-  >
+  <Motion.div initial={initial} animate={animate} transition={transition(0)}>
     <Location />
     <h1 class="font-bold text-3xl">Nirjhor Nath</h1>
   </Motion.div>
@@ -58,7 +48,6 @@ const HomeSubHeading: Component = () => (
     initial={initial}
     animate={animate}
     transition={transition(2.3)}
-    exit={exit}
   >
     Trying to create software that feels magical
   </Motion.p>
@@ -70,7 +59,6 @@ const HomeDescription: Component = () => (
     initial={initial}
     animate={{ ...animate, opacity: 0.8 }}
     transition={transition(3.1)}
-    exit={exit}
   >
     <span class="md:max-w-2xl">
       Student, developer, and designer taking a pragmatic user-focused approach
@@ -86,7 +74,6 @@ const HomeMore: Component = () => (
     initial={initial}
     animate={{ ...animate, opacity: 0.9 }}
     transition={transition(4.3)}
-    exit={exit}
   >
     <a class="text-2xl flex gap-2 items-center opacity-90" href="/about">
       See More About Me
