@@ -23,16 +23,20 @@
 }
 
 html {
-  background-color: theme("colors.background");
+  background: linear-gradient(
+    91.1deg,
+    #202020 13.61%,
+    rgba(30, 30, 30, 0.866182) 280.44%,
+    rgba(28, 28, 28, 0.743754) 304.7%,
+    rgba(24, 24, 24, 0) 304.73%,
+    rgba(24, 24, 24, 0.46) 320.32%
+  );
   color: white;
   color-scheme: dark;
 }
 
-h1 {
-  font-family: "Bigilla" !important;
-}
-
-p,
+h1,
+p.messina,
 a {
   font-family: Messina !important;
 }

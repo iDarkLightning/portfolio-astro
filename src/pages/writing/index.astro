@@ -1,6 +1,6 @@
 ---
 import { Nav } from "../../components/nav";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/layout.astro";
 
 let allPosts = await Astro.glob("../../data/blog-posts/*.md");
 allPosts = allPosts.sort(

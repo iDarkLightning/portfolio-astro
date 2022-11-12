@@ -1,74 +1,77 @@
 ---
 import "../styles/global.css";
+import "@fontsource/newsreader";
 import ContactLink from "../components/contact-link.astro";
-import Layout from "../layouts/Layout.astro";
-import { Nav } from "../components/nav";
+import Layout from "../layouts/layout.astro";
+import Arrow from "../components/arrow.astro";
+import { Location } from "../components/location";
 ---
 
 <Layout title="Nirjhor Nath" className="h-full">
-  <Nav client:load slot="nav" route="/" absolute />
-  <div class="flex flex-col justify-center h-full">
-    <h1 class="text-5xl sm:text-6xl md:text-[5.0625rem]">Hi, I'm Nirjhor</h1>
-    <div class="mt-6 flex flex-col gap-4 opacity-80">
-      <p>
+  <div class="flex flex-col justify-center h-full gap-8">
+    <div class="flex flex-col gap-2">
+      <div id="name">
+        <Location client:only />
+        <h1 class="font-bold text-3xl">Nirjhor Nath</h1>
+      </div>
+      <p class="text-2xl font-serif italic font-medium" id="magical">
+        Trying to create software that feels magical
+      </p>
+    </div>
+    <p class="messina opacity-80 flex flex-col gap-4" id="description">
+      <span class="md:max-w-2xl">
         Student, developer, and designer taking a pragmatic user-focused
         approach to software development.
-      </p>
-      <p>Passionate about building technology on the bleeding edge.</p>
-    </div>
-    <a
-      class="mt-6 text-xl flex gap-4 items-center hover:underline decoration-blue-500 underline-offset-4"
-      href="/about"
-    >
-      See more about me
-      <svg
-        id="arrow"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M1.5 12C1.5 11.8011 1.57902 11.6103 1.71967 11.4696C1.86032 11.329 2.05109 11.25 2.25 11.25H19.9395L15.219 6.53097C15.0782 6.39014 14.9991 6.19913 14.9991 5.99997C14.9991 5.80081 15.0782 5.6098 15.219 5.46897C15.3598 5.32814 15.5508 5.24902 15.75 5.24902C15.9492 5.24902 16.1402 5.32814 16.281 5.46897L22.281 11.469C22.3508 11.5386 22.4063 11.6214 22.4441 11.7125C22.4819 11.8036 22.5013 11.9013 22.5013 12C22.5013 12.0986 22.4819 12.1963 22.4441 12.2874C22.4063 12.3785 22.3508 12.4613 22.281 12.531L16.281 18.531C16.1402 18.6718 15.9492 18.7509 15.75 18.7509C15.5508 18.7509 15.3598 18.6718 15.219 18.531C15.0782 18.3901 14.9991 18.1991 14.9991 18C14.9991 17.8008 15.0782 17.6098 15.219 17.469L19.9395 12.75H2.25C2.05109 12.75 1.86032 12.671 1.71967 12.5303C1.57902 12.3896 1.5 12.1989 1.5 12V12Z"
-          fill="#F8F8F8"></path>
-      </svg>
-    </a>
-    <div class="flex gap-8 mt-8">
-      <ContactLink
-        to="https://twitter.com/iDarkThunder"
-        alt="Twitter"
-        src="/twitter.svg"
-      />
-      <ContactLink
-        to="https://github.com/iDarkLightning"
-        alt="GitHub"
-        src="/github.svg"
-      />
-      <ContactLink
-        to="https://linkedin.com/nirjhor.nath"
-        alt="LinkedIn"
-        src="/linkedin.svg"
-      />
+      </span>
+      <span> Passionate about building technology on the bleeding edge.</span>
+    </p>
+    <div class="flex flex-col gap-4" id="contact">
+      <a class="text-2xl flex gap-2 items-center opacity-90" href="/about">
+        See More About Me
+        <Arrow />
+      </a>
+      <div class="flex gap-8">
+        <ContactLink
+          to="https://twitter.com/iDarkThunder"
+          alt="Twitter"
+          src="/twitter.svg"
+        />
+        <ContactLink
+          to="https://github.com/iDarkLightning"
+          alt="GitHub"
+          src="/github.svg"
+        />
+        <ContactLink
+          to="https://www.linkedin.com/in/nirjhor-nath-b82317232/"
+          alt="LinkedIn"
+          src="/linkedin.svg"
+        />
+      </div>
     </div>
   </div>
-  <style>
-    #arrow {
-      animation: arrow 1.5s infinite;
-    }
-
-    @keyframes arrow {
-      0%,
-      100% {
-        transform: translateX(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      }
-      50% {
-        transform: translateX(0);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      }
-    }
-  </style>
 </Layout>
+<style>
+  #name,
+  #magical,
+  #description,
+  #contact {
+    transform: translateY(0.5rem);
+    opacity: 0;
+  }
+</style>
+<script>
+  import { timeline } from "motion";
+
+  const action = { transform: "translateY(0)", opacity: 1 };
+
+  timeline([
+    ["#name", action, { at: "-0.2", easing: "ease-in" }],
+    ["#magical", action, { at: "-0.1", easing: "ease-in" }],
+    [
+      "#description",
+      { ...action, opacity: 0.8 },
+      { at: "-0.1", easing: "ease-in" },
+    ],
+    ["#contact", action, { at: "-0.1", easing: "ease-in" }],
+  ]);
+</script>

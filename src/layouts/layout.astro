@@ -15,12 +15,11 @@ const { title, className } = Astro.props as Props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <script src="/app.js" type="module" is:inline></script>
     <title>{title}</title>
   </head>
   <body>
-    <main class="h-screen">
-      <div class="w-11/12 md:w-10/12 max-w-[100rem] m-auto relative">
+    <main class="h-screen" id="main">
+      <div class="w-[50%] bg-red-200 m-auto relative">
         <slot name="nav" />
       </div>
       <section
@@ -34,22 +33,5 @@ const { title, className } = Astro.props as Props;
         </span>
       </section>
     </main>
-    <Cursor />
-    <style>
-      #main {
-        animation: main 100ms;
-      }
-
-      @keyframes main {
-        0% {
-          opacity: 0;
-          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-        }
-        100% {
-          opacity: 100;
-          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-        }
-      }
-    </style>
   </body>
 </html>

@@ -1,6 +1,6 @@
 ---
 import { Nav } from "../../components/nav";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/layout.astro";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../data/blog-posts/*.md");
