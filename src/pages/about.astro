@@ -1,5 +1,35 @@
 ---
+import { AboutHeading, AboutSection } from "../components/about";
 import Layout from "../layouts/layout.astro";
 ---
 
-<Layout title="About">Hi</Layout>
+<Layout title="About" className="lg:w-9/12 xl:w-10/12">
+  <div
+    class="flex py-6 flex-col items-center gap-12 lg:flex-row lg:gap-24 lg:h-screen mt-32 lg:mt-0"
+  >
+    <div class="flex-[1.5] flex flex-col gap-6">
+      <AboutHeading client:load />
+      <AboutSection
+        client:load
+        delay={1.3}
+        heading="Hi, I'm Nirjhor!"
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing. Metus aliquam eleifend mi in nulla posuere sollicitudin. Eget nulla facilisi etiam dignissim dia quis. Id aliquet lectus proin nibh."
+      />
+      <AboutSection
+        client:load
+        delay={2.3}
+        heading="Technologies"
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas."
+      />
+      <AboutSection
+        client:load
+        delay={3.1}
+        heading="Colophon"
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing."
+      />
+    </div>
+    <div class="lg:flex-1 w-full">
+      <img src="me.png" alt="Me" class="w-full" />
+    </div>
+  </div>
+</Layout>

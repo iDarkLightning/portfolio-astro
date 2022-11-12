@@ -28,11 +28,11 @@ const { title, className } = Astro.props as Props;
       </div>
       <section
         class:list={[
-          "w-11/12 md:w-8/12 lg:w-7/12 xl:w-5/12 max-w-[75rem] m-auto",
+          "w-11/12 md:w-8/12 lg:w-7/12 xl:w-5/12 max-w-[75rem] mx-auto",
           className,
         ]}
       >
-        <span id="main">
+        <span>
           <slot />
         </span>
       </section>
