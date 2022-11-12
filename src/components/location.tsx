@@ -1,7 +1,11 @@
 import { FC, useEffect, useState } from "react";
 
 export const Location: FC = () => {
-  const [time, setTime] = useState<null | string>(null);
+  const [time, setTime] = useState<null | string>(
+    new Date().toLocaleTimeString("en-US", {
+      timeZone: "America/New_York",
+    })
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
