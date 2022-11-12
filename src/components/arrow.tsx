@@ -1,30 +1,6 @@
 import { Motion } from "@motionone/solid";
 import type { Component } from "solid-js";
 
-{
-  /* <svg
-  id="arrow"
-
->
-
-</svg>
-<script>
-  import { animate } from "motion";
-
-  animate(
-    "#arrow",
-    {
-      transform: "translateX(0.5rem)",
-    },
-    {
-      repeat: Infinity,
-      direction: "alternate",
-      duration: 1.5,
-    }
-  );
-</script> */
-}
-
 export const Arrow: Component = () => (
   <Motion.svg
     width="24"

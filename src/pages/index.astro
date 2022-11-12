@@ -2,22 +2,11 @@
 import "../styles/global.css";
 import "@fontsource/newsreader";
 import Layout from "../layouts/layout.astro";
-import { Location } from "../components/location";
-import {
-  HomeDescription,
-  HomeHeading,
-  HomeMore,
-  HomeSubHeading,
-} from "../components/home";
+import { Home } from "../components/home";
 ---
 
 <Layout title="Nirjhor Nath" className="h-full">
   <div class="flex flex-col justify-center h-full gap-8">
-    <div class="flex flex-col gap-2">
-      <HomeHeading client:load />
-      <HomeSubHeading client:load />
-    </div>
-    <HomeDescription client:load />
-    <HomeMore client:load />
+    <Home client:load />
   </div>
 </Layout>

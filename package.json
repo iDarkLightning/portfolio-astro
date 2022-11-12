@@ -20,6 +20,7 @@
     "@fontsource/newsreader": "^4.5.9",
     "@motionone/solid": "^10.14.3",
     "motion": "^10.14.3",
-    "solid-js": "^1.6.2"
+    "solid-js": "^1.6.2",
+    "swup": "^2.0.19"
   }
 }

@@ -3,10 +3,22 @@ import { Location } from "./location";
 import {
   AnimationOptionsWithOverrides,
   Motion,
+  Presence,
   VariantDefinition,
 } from "@motionone/solid";
 import { ContactLink } from "./contact-link";
 import { Arrow } from "./arrow";
+
+export const Home: Component = () => (
+  <Presence>
+    <div class="flex flex-col gap-2">
+      <HomeHeading />
+      <HomeSubHeading />
+    </div>
+    <HomeDescription />
+    <HomeMore />
+  </Presence>
+);
 
 const initial: VariantDefinition = {
   transform: "translateY(0.5rem)",
@@ -18,35 +30,47 @@ const animate: VariantDefinition = {
   opacity: 1,
 };
 
+const exit: VariantDefinition = {
+  transform: "translateY(-0.5rem)",
+  opacity: 0,
+};
+
 const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
   easing: "ease-in",
   delay: multiplier * 0.1,
 });
 
-export const HomeHeading: Component = () => (
-  <Motion.div initial={initial} animate={animate} transition={transition(0)}>
+const HomeHeading: Component = () => (
+  <Motion.div
+    initial={initial}
+    animate={animate}
+    transition={transition(0)}
+    exit={exit}
+  >
     <Location />
     <h1 class="font-bold text-3xl">Nirjhor Nath</h1>
   </Motion.div>
 );
 
-export const HomeSubHeading: Component = () => (
+const HomeSubHeading: Component = () => (
   <Motion.p
     class="text-2xl font-serif italic font-medium"
     initial={initial}
     animate={animate}
     transition={transition(2.3)}
+    exit={exit}
   >
     Trying to create software that feels magical
   </Motion.p>
 );
 
-export const HomeDescription: Component = () => (
+const HomeDescription: Component = () => (
   <Motion.p
     class="messina opacity-80 flex flex-col gap-4"
     initial={initial}
     animate={{ ...animate, opacity: 0.8 }}
     transition={transition(3.1)}
+    exit={exit}
   >
     <span class="md:max-w-2xl">
       Student, developer, and designer taking a pragmatic user-focused approach
@@ -56,12 +80,13 @@ export const HomeDescription: Component = () => (
   </Motion.p>
 );
 
-export const HomeMore: Component = () => (
+const HomeMore: Component = () => (
   <Motion.div
     class="flex flex-col gap-4"
     initial={initial}
     animate={{ ...animate, opacity: 0.9 }}
     transition={transition(4.3)}
+    exit={exit}
   >
     <a class="text-2xl flex gap-2 items-center opacity-90" href="/about">
       See More About Me
