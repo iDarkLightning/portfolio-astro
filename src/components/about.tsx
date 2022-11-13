@@ -57,7 +57,7 @@ export const Signature: Component = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("signature");
+          entry.target.classList.add("signature-animation");
         }
       });
     });
@@ -68,6 +68,7 @@ export const Signature: Component = () => {
   return (
     <svg
       ref={ref}
+      class="signature"
       width="339"
       height="114"
       viewBox="0 0 339 114"

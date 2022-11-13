@@ -42,6 +42,9 @@ a {
 .signature {
   stroke-dashoffset: 1445;
   stroke-dasharray: 1445;
+}
+
+.signature-animation {
   animation: sign 3s ease;
   animation-fill-mode: forwards;
   animation-delay: 250ms;
