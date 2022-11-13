@@ -1,5 +1,5 @@
 ---
-import { AboutHeading, AboutSection } from "../components/about";
+import { AboutHeading, AboutSection, Signature } from "../components/about";
 import Layout from "../layouts/layout.astro";
 ---
 
@@ -17,16 +17,13 @@ import Layout from "../layouts/layout.astro";
       />
       <AboutSection
         client:load
-        delay={2.3}
-        heading="Technologies"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas."
-      />
-      <AboutSection
-        client:load
-        delay={3.1}
-        heading="Colophon"
+        delay={2.8}
+        heading="Technologies & Colophon"
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing."
       />
+      <div class="mt-4">
+        <Signature client:load />
+      </div>
     </div>
     <div class="lg:flex-1 w-full">
       <img src="me.png" alt="Me" class="w-full" />

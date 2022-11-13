@@ -38,3 +38,17 @@ a {
 a {
   font-weight: 500;
 }
+
+.signature {
+  stroke-dashoffset: 1445;
+  stroke-dasharray: 1445;
+  animation: sign 3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+}
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
