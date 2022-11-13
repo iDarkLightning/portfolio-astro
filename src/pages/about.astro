@@ -5,7 +5,7 @@ import Layout from "../layouts/layout.astro";
 
 <Layout title="About" className="lg:w-9/12 xl:w-10/12">
   <div
-    class="flex py-6 flex-col items-center gap-12 lg:flex-row lg:gap-24 lg:h-screen"
+    class="flex py-12 flex-col-reverse items-center gap-12 lg:flex-row lg:gap-24 lg:h-screen"
   >
     <div class="flex-[1.5] flex flex-col gap-6">
       <AboutHeading client:load />
@@ -22,7 +22,7 @@ import Layout from "../layouts/layout.astro";
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing."
       />
       <div class="mt-4">
-        <Signature client:load />
+        <Signature client:only />
       </div>
     </div>
     <div class="lg:flex-1 w-full">

@@ -44,7 +44,7 @@ a {
   stroke-dasharray: 1445;
   animation: sign 3s ease;
   animation-fill-mode: forwards;
-  animation-delay: 500ms;
+  animation-delay: 250ms;
 }
 
 @keyframes sign {
