@@ -20,6 +20,7 @@
     "@astrojs/solid-js": "^1.2.2",
     "@fontsource/newsreader": "^4.5.9",
     "@motionone/solid": "^10.14.3",
+    "clsx": "^1.2.1",
     "motion": "^10.14.3",
     "solid-js": "^1.6.2"
   }

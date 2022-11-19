@@ -3,10 +3,14 @@ import "../styles/global.css";
 import "@fontsource/newsreader";
 import Layout from "../layouts/layout.astro";
 import { Home } from "../components/home";
+import { Nav } from "../components/nav";
 ---
 
 <Layout title="Nirjhor Nath" className="h-full">
-  <div class="flex flex-col justify-center h-full gap-8">
+  <Nav currentRoute="/" client:load slot="nav" />
+  <div
+    class="flex flex-col justify-center gap-8 absolute top-[50vh] translate-y-[-50%]"
+  >
     <Home client:load />
   </div>
 </Layout>

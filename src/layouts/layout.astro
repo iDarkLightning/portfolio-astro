@@ -17,19 +17,24 @@ const { title, className } = Astro.props as Props;
     <title>{title}</title>
   </head>
   <body>
-    <main class="h-screen">
-      <div class="w-[50%] bg-red-200 m-auto relative">
-        <slot name="nav" />
-      </div>
+    <main>
       <section
         class:list={[
-          "w-11/12 md:w-8/12 lg:w-7/12 xl:w-5/12 max-w-[75rem] mx-auto",
+          "w-11/12 md:w-8/12 lg:w-7/12 xl:w-5/12 max-w-[75rem] mx-auto relative",
           className,
         ]}
       >
-        <span>
-          <slot />
-        </span>
+        <div class="content">
+          <!-- <div class="nav">
+            <slot name="nav" />
+          </div> -->
+          <div class="nav">
+            <slot name="nav" />
+          </div>
+          <div class="main">
+            <slot />
+          </div>
+        </div>
       </section>
     </main>
   </body>

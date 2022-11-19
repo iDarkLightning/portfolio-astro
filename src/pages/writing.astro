@@ -1,6 +1,7 @@
 ---
 import { Divider } from "../components/divider";
 import { Heading } from "../components/heading";
+import { Nav } from "../components/nav";
 import { ArticleCard, ArticleYear } from "../components/writing";
 import Layout from "../layouts/layout.astro";
 import type { Article } from "../types/article";
@@ -24,13 +25,14 @@ posts.forEach((post) => {
 ---
 
 <Layout title="Writing">
-  <div class="py-12 lg:pt-24 lg:pb-6 gap-6 flex flex-col">
+  <Nav currentRoute="/writing" client:load slot="nav" />
+  <div class="gap-6 flex flex-col py-6 lg:py-12">
     <Heading
       client:load
       heading="My Writing"
       sub="A collection of my thoughts on tech, design, development, and my life! Hopefully some of it is coherent."
     />
-    <hr class="opacity-30" />
+    <hr class="opacity-60 border-[#3a3a3a]" />
     {
       Object.entries(articles).map(([key, value], idx) => (
         <>
