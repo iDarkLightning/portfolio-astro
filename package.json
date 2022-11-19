@@ -16,11 +16,11 @@
     "prettier-plugin-astro": "^0.5.0"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.11.6",
     "@astrojs/solid-js": "^1.2.2",
     "@fontsource/newsreader": "^4.5.9",
     "@motionone/solid": "^10.14.3",
     "motion": "^10.14.3",
-    "solid-js": "^1.6.2",
-    "swup": "^2.0.19"
+    "solid-js": "^1.6.2"
   }
 }

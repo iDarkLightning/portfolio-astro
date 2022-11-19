@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Bigilla;
-  font-weight: 700;
-  src: url("/fonts/Bigilla-Bold.woff") format("woff");
-}
-@font-face {
   font-family: Messina;
   src: url("/fonts/MessinaSans-Regular.woff") format("woff");
 }
@@ -28,15 +23,52 @@ html {
   color-scheme: dark;
 }
 
+article > p {
+  color: theme("colors.gray.300");
+}
+
 h1,
 h2,
-p.messina,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+code {
+  @apply text-sm p-[0.125rem] rounded border border-neutral-800 text-neutral-100 bg-[#333];
+}
+
+pre {
+  @apply rounded-xl border border-neutral-800 p-4 my-8 text-sm overflow-y-auto;
+}
+
+pre > code {
+  all: unset;
+}
+
+h1,
+h2,
+p:not(.font-serif),
 a {
   font-family: Messina !important;
 }
 
 a {
   font-weight: 500;
+}
+
+a:not(.no-underline) {
+  text-decoration: underline;
 }
 
 .signature {

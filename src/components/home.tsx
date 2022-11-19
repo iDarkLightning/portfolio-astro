@@ -55,7 +55,7 @@ const HomeSubHeading: Component = () => (
 
 const HomeDescription: Component = () => (
   <Motion.p
-    class="messina opacity-80 flex flex-col gap-4"
+    class="opacity-80 flex flex-col gap-4"
     initial={initial}
     animate={{ ...animate, opacity: 0.8 }}
     transition={transition(3.1)}
@@ -75,7 +75,10 @@ const HomeMore: Component = () => (
     animate={{ ...animate, opacity: 0.9 }}
     transition={transition(4.3)}
   >
-    <a class="text-2xl flex gap-2 items-center opacity-90" href="/about">
+    <a
+      class="text-2xl flex gap-2 items-center opacity-90 no-underline"
+      href="/about"
+    >
       See More About Me
       <Arrow />
     </a>

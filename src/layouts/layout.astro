@@ -14,15 +14,10 @@ const { title, className } = Astro.props as Props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <script>
-      //@ts-ignore
-      import Swup from "swup";
-      new Swup();
-    </script>
     <title>{title}</title>
   </head>
   <body>
-    <main class="h-screen transition-fade" id="swup">
+    <main class="h-screen">
       <div class="w-[50%] bg-red-200 m-auto relative">
         <slot name="nav" />
       </div>
@@ -37,17 +32,5 @@ const { title, className } = Astro.props as Props;
         </span>
       </section>
     </main>
-    <style>
-      .transition-fade {
-        transition: 0.4s;
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      html.is-animating .transition-fade {
-        transform: translateY(-0.5rem);
-        opacity: 0;
-      }
-    </style>
   </body>
 </html>

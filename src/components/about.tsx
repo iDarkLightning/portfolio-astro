@@ -3,7 +3,6 @@ import {
   Motion,
   VariantDefinition,
 } from "@motionone/solid";
-import { inView } from "motion";
 import { Component, onMount } from "solid-js";
 
 const initial: VariantDefinition = {
@@ -20,19 +19,6 @@ const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
   easing: "ease-in",
   delay: multiplier * 0.1,
 });
-
-export const AboutHeading: Component = () => (
-  <Motion.div initial={initial} animate={animate} transition={transition(0)}>
-    <a href="/">
-      <p class="text-sm uppercase font-mono">{"<-"} Index</p>
-    </a>
-    <h1 class="text-3xl font-bold">About Me</h1>
-    <p class="font-serif italic opacity-80">
-      A little bit about me, a little bit about the site, and a little bit about
-      everything in between
-    </p>
-  </Motion.div>
-);
 
 export const AboutSection: Component<{
   heading: string;

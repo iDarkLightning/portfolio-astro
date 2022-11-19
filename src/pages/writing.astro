@@ -1,0 +1,50 @@
+---
+import { Divider } from "../components/divider";
+import { Heading } from "../components/heading";
+import { ArticleCard, ArticleYear } from "../components/writing";
+import Layout from "../layouts/layout.astro";
+import type { Article } from "../types/article";
+
+const articles: Record<number, Article[]> = {};
+
+const posts: Article[] = (await Astro.glob("./writing/*.{md,mdx}"))
+  .map((post) => ({
+    ...post.frontmatter,
+    url: post.url,
+  }))
+  .map((post: any) => ({ ...post, date: new Date(post.pubDate) }));
+
+posts.forEach((post) => {
+  if (articles[post.date.getFullYear()]) {
+    articles[post.date.getFullYear()].push(post);
+  } else {
+    articles[post.date.getFullYear()] = [post];
+  }
+});
+---
+
+<Layout title="Writing">
+  <div class="py-12 lg:pt-24 lg:pb-6 gap-6 flex flex-col">
+    <Heading
+      client:load
+      heading="My Writing"
+      sub="A collection of my thoughts on tech, design, development, and my life! Hopefully some of it is coherent."
+    />
+    <hr class="opacity-30" />
+    {
+      Object.entries(articles).map(([key, value], idx) => (
+        <>
+          <div class="flex gap-4 md:gap-16 flex-col md:flex-row">
+            <ArticleYear year={key} client:load />
+            <div class="w-full flex flex-col gap-8">
+              {value.map((item, idx) => (
+                <ArticleCard item={item} idx={idx} client:load />
+              ))}
+            </div>
+          </div>
+          <Divider client:only idx={idx} list={Object.entries(articles)} />
+        </>
+      ))
+    }
+  </div>
+</Layout>

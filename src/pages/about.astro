@@ -1,5 +1,6 @@
 ---
-import { AboutHeading, AboutSection, Signature } from "../components/about";
+import { AboutSection, Signature } from "../components/about";
+import { Heading } from "../components/heading";
 import Layout from "../layouts/layout.astro";
 ---
 
@@ -8,7 +9,11 @@ import Layout from "../layouts/layout.astro";
     class="flex py-12 flex-col-reverse items-center gap-12 lg:flex-row lg:gap-24 lg:h-screen"
   >
     <div class="flex-[1.5] flex flex-col gap-6">
-      <AboutHeading client:load />
+      <Heading
+        client:load
+        heading="About Me"
+        sub="A little bit about me, the site, and everything in between"
+      />
       <AboutSection
         client:load
         delay={1.3}
