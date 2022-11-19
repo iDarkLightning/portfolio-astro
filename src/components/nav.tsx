@@ -11,6 +11,10 @@ const routes = [
     route: "/about",
   },
   {
+    name: "Projects",
+    route: "/projects",
+  },
+  {
     name: "Writing",
     route: "/writing",
   },

@@ -24,17 +24,7 @@ const { title, className } = Astro.props as Props;
           className,
         ]}
       >
-        <div class="content">
-          <!-- <div class="nav">
-            <slot name="nav" />
-          </div> -->
-          <div class="nav">
-            <slot name="nav" />
-          </div>
-          <div class="main">
-            <slot />
-          </div>
-        </div>
+        <slot />
       </section>
     </main>
   </body>

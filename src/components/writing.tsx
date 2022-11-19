@@ -29,7 +29,7 @@ export const ArticleCard: Component<{ item: Article; idx: number }> = (
     animate={animate}
     transition={transition(props.idx / 100 + (2 + props.idx))}
     href={props.item.url}
-    class="w-full flex flex-col hover:bg-[#141414] p-4 rounded-md transition-all no-underline gap-2"
+    class="w-full flex flex-col hover:bg-[#222] p-4 rounded-md transition-all no-underline gap-2"
   >
     <div class="w-full flex gap-2 justify-between">
       <p class="font-semibold">{props.item.title}</p>

@@ -1,0 +1,27 @@
+---
+import { Heading } from "../components/heading";
+import { Nav } from "../components/nav";
+import { ProjectCard } from "../components/projects";
+import Layout from "../layouts/layout.astro";
+import { getProjects } from "../lib/cms";
+
+const allProjects = await getProjects();
+const projects = allProjects.data.allProjects.sort((a, b) => b.year - a.year);
+---
+
+<Layout title="Projects">
+  <Nav client:load currentRoute="/projects" />
+  <div class="gap-6 flex flex-col py-6">
+    <Heading
+      client:load
+      heading="My Projects"
+      sub="I like building things on the internet! Here are some of those things."
+    />
+    <hr class="opacity-60 border-[#3a3a3a]" />
+    {
+      projects.map((project, idx) => (
+        <ProjectCard project={project} idx={idx} client:load />
+      ))
+    }
+  </div>
+</Layout>
