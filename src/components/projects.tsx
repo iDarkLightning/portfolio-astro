@@ -10,7 +10,7 @@ export const ProjectCard: Component<{ project: Project; idx: number }> = (
 
   setTimeout(() => {
     ref?.classList.add("transition-opacity");
-  }, 1000);
+  }, (props.idx / 100 + (2 + props.idx)) * 0.5);
 
   return (
     <Motion.a
