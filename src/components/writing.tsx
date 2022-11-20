@@ -4,22 +4,8 @@ import {
   VariantDefinition,
 } from "@motionone/solid";
 import type { Component } from "solid-js";
+import { animate, initial, transition } from "../lib/animations";
 import type { Article } from "../types/article";
-
-const initial: VariantDefinition = {
-  transform: "translateY(0.5rem)",
-  opacity: 0,
-};
-
-const animate: VariantDefinition = {
-  transform: "translateY(0)",
-  opacity: 1,
-};
-
-const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
-  easing: "ease-in",
-  delay: multiplier * 0.1,
-});
 
 export const ArticleCard: Component<{ item: Article; idx: number }> = (
   props
@@ -45,7 +31,7 @@ export const ArticleCard: Component<{ item: Article; idx: number }> = (
 
 export const ArticleYear: Component<{ year: string }> = (props) => (
   <Motion.p
-    initial={{ ...initial, transform: "translateX(-0.5rem)" }}
+    initial={{ ...(initial as any), transform: "translateX(-0.5rem)" }}
     animate={{ transform: "translateX(0)", opacity: 0.8 }}
     transition={transition(5)}
     class="font-serif font-bold pt-4"

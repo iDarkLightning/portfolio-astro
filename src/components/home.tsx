@@ -1,13 +1,9 @@
+import { Motion } from "@motionone/solid";
 import type { Component } from "solid-js";
-import { Location } from "./location";
-import {
-  AnimationOptionsWithOverrides,
-  Motion,
-  Presence,
-  VariantDefinition,
-} from "@motionone/solid";
-import { ContactLink } from "./contact-link";
+import { animate, initial, transition } from "../lib/animations";
 import { Arrow } from "./arrow";
+import { ContactLink } from "./contact-link";
+import { Location } from "./location";
 
 export const Home: Component = () => (
   <>
@@ -19,21 +15,6 @@ export const Home: Component = () => (
     <HomeMore />
   </>
 );
-
-const initial: VariantDefinition = {
-  transform: "translateY(0.5rem)",
-  opacity: 0,
-};
-
-const animate: VariantDefinition = {
-  transform: "translateY(0)",
-  opacity: 1,
-};
-
-const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
-  easing: "ease-in",
-  delay: multiplier * 0.1,
-});
 
 const HomeHeading: Component = () => (
   <Motion.div initial={initial} animate={animate} transition={transition(0)}>
@@ -57,7 +38,7 @@ const HomeDescription: Component = () => (
   <Motion.p
     class="opacity-80 flex flex-col gap-4"
     initial={initial}
-    animate={{ ...animate, opacity: 0.8 }}
+    animate={{ ...(animate as any), opacity: 0.8 }}
     transition={transition(3.1)}
   >
     <span class="md:max-w-2xl">
@@ -72,7 +53,7 @@ const HomeMore: Component = () => (
   <Motion.div
     class="flex flex-col gap-4"
     initial={initial}
-    animate={{ ...animate, opacity: 0.9 }}
+    animate={{ ...(animate as any), opacity: 0.9 }}
     transition={transition(4.3)}
   >
     <a
@@ -84,7 +65,7 @@ const HomeMore: Component = () => (
     </a>
     <div class="flex gap-8">
       <ContactLink
-        to="https://twitter.com/iDarkThunder"
+        to="https://twitter.com/nirjhordev"
         alt="Twitter"
         src="/twitter.svg"
       />

@@ -1,24 +1,6 @@
-import {
-  AnimationOptionsWithOverrides,
-  Motion,
-  VariantDefinition,
-} from "@motionone/solid";
+import { Motion } from "@motionone/solid";
 import { Component, onMount } from "solid-js";
-
-const initial: VariantDefinition = {
-  transform: "translateY(0.5rem)",
-  opacity: 0,
-};
-
-const animate: VariantDefinition = {
-  transform: "translateY(0)",
-  opacity: 0.9,
-};
-
-const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
-  easing: "ease-in",
-  delay: multiplier * 0.1,
-});
+import { animate, initial, transition } from "../lib/animations";
 
 export const AboutSection: Component<{
   heading: string;

@@ -4,21 +4,7 @@ import {
   VariantDefinition,
 } from "@motionone/solid";
 import type { Component } from "solid-js";
-
-const initial: VariantDefinition = {
-  transform: "translateY(0.5rem)",
-  opacity: 0,
-};
-
-const animate: VariantDefinition = {
-  transform: "translateY(0)",
-  opacity: 1,
-};
-
-const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
-  easing: "ease-in",
-  delay: multiplier * 0.1,
-});
+import { animate, initial, transition } from "../lib/animations";
 
 export const ProjectCard: Component<{ project: any; idx: number }> = (
   props
