@@ -13,7 +13,7 @@ export const ProjectCard: Component<{ project: any; idx: number }> = (
     initial={initial}
     animate={animate}
     transition={transition(props.idx / 100 + (2 + props.idx))}
-    class="no-underline w-full flex gap-2 justify-between items-center py-4 transition-all rounded-md"
+    class="no-underline w-full flex gap-2 justify-between items-center py-4 rounded-md"
   >
     <div class="flex flex-col">
       <p class="font-semibold">{props.project.name}</p>
