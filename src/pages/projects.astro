@@ -21,7 +21,7 @@ const projects = allProjects.data.allProjects.sort((a, b) => b.year - a.year);
     <div class="hover-list">
       {
         projects.map((project, idx) => (
-          <ProjectCard project={project} idx={idx} client:load />
+          <ProjectCard project={project} idx={idx} client:only />
         ))
       }
     </div>
