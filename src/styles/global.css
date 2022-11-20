@@ -88,9 +88,9 @@ a:not(.no-underline) {
   }
 }
 
-.hover-list:hover > * > a {
+/* .hover-list:hover > * > a {
   opacity: 0.25 !important;
 }
 .hover-list > * > a:hover {
   opacity: 1 !important;
-}
+} */
