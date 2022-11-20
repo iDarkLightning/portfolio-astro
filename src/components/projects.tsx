@@ -1,27 +1,19 @@
-import {
-  AnimationOptionsWithOverrides,
-  Motion,
-  VariantDefinition,
-} from "@motionone/solid";
-import { Component, createEffect, createSignal } from "solid-js";
+import { Motion } from "@motionone/solid";
+import type { Component } from "solid-js";
 import { animate, initial, transition } from "../lib/animations";
 import type { Project } from "../types/project";
 
 export const ProjectCard: Component<{ project: Project; idx: number }> = (
   props
 ) => {
-  const [animating, setAnimating] = createSignal(true);
   let ref: HTMLAnchorElement | null = null;
 
-  createEffect(() => {
-    if (!animating()) {
-      ref?.classList.add("transition-opacity");
-    }
-  });
+  setTimeout(() => {
+    ref?.classList.add("transition-opacity");
+  }, 1000);
 
   return (
     <Motion.a
-      onMotionComplete={() => setAnimating(false)}
       href={props.project.link}
       initial={initial}
       animate={animate}
