@@ -16,8 +16,8 @@ const {
 <Layout title={title} className="w-full lg:w-full xl:w-full">
   <div class="py-12 w-full">
     <div class="flex flex-col gap-2">
-      <h1>{title}</h1>
-      <p class="text-accent">{new Date(pubDate).toLocaleDateString()}</p>
+      <h1 class="text-xl">{title}</h1>
+      <p class="text-accent-300">{new Date(pubDate).toLocaleDateString()}</p>
     </div>
     <article class="pt-6 w-full">
       <slot />
