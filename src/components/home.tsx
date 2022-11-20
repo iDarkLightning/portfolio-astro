@@ -56,7 +56,11 @@ const HomeMore: Component = () => (
     animate={animate}
     transition={transition(4.3)}
   >
-    <a class="text-2xl flex gap-2 items-center no-underline" href="/about">
+    <a
+      class="text-2xl flex gap-2 items-center no-underline"
+      href="/about"
+      rel="prefetch"
+    >
       See More About Me
       <Arrow />
     </a>

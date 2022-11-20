@@ -18,6 +18,7 @@ export const ArticleCard: Component<{ item: Article; idx: number }> = (
 
   return (
     <Motion.a
+      rel="prefetch"
       ref={(el) => (ref = el)}
       initial={initial}
       animate={animate}

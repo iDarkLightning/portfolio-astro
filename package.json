@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.11.6",
+    "@astrojs/prefetch": "^0.1.1",
     "@astrojs/solid-js": "^1.2.2",
     "@fontsource/newsreader": "^4.5.9",
     "@motionone/solid": "^10.14.3",

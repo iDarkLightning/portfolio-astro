@@ -31,7 +31,7 @@ export const Nav: Component<{ currentRoute: string }> = (props) => (
               item.route === props.currentRoute && "bg-[#222]"
             )}
           >
-            <a href={item.route} class="no-underline">
+            <a href={item.route} class="no-underline" rel="prefetch">
               {item.name}
             </a>
           </li>
