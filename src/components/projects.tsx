@@ -12,7 +12,7 @@ export const ProjectCard: Component<{ project: any; idx: number }> = (
   <Motion.a
     initial={initial}
     animate={animate}
-    transition={transition(props.idx / 100 + (2 + props.idx))}
+    transition={transition(2)}
     href={props.project.link}
     class="no-underline w-full flex gap-2 justify-between items-center transition-all py-4 rounded-md"
   >
