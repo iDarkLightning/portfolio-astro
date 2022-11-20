@@ -3,6 +3,9 @@ import { AboutSection, Signature } from "../components/about";
 import { Heading } from "../components/heading";
 import { Nav } from "../components/nav";
 import Layout from "../layouts/layout.astro";
+import { getAbout } from "../lib/cms";
+
+const content = await getAbout();
 ---
 
 <Layout title="About" className="lg:w-9/12 xl:w-10/12">
@@ -19,14 +22,14 @@ import Layout from "../layouts/layout.astro";
       <AboutSection
         client:load
         delay={1.3}
-        heading="Hi, I'm Nirjhor!"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing. Metus aliquam eleifend mi in nulla posuere sollicitudin. Eget nulla facilisi etiam dignissim dia quis. Id aliquet lectus proin nibh."
+        heading={content.data.about.personalHeading}
+        content={content.data.about.personal}
       />
       <AboutSection
         client:load
         delay={2.8}
-        heading="Technologies & Colophon"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus quam pellentesque nec nam aliquam sem et. Fermentum dui faucibus in ornare. In eu mi bibendum neque egestas congue quisque egestas. A iaculis at erat pellentesque adipiscing."
+        heading={content.data.about.techHeading}
+        content={content.data.about.tech}
       />
       <div class="mt-4">
         <Signature client:load />

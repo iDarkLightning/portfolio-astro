@@ -17,6 +17,25 @@ const fetchCms = async <T>(query: string): Promise<{ data: T }> => {
   return response.json();
 };
 
+export const getAbout = () => {
+  return fetchCms<{
+    about: {
+      personal: string;
+      personalHeading: string;
+      tech: string;
+      techHeading: string;
+    };
+  }>(`
+    query MyQuery {
+      about {
+        personal
+        personalHeading
+        tech
+        techHeading
+      }
+    }`);
+};
+
 export const getProjects = () => {
   return fetchCms<{ allProjects: Project[] }>(`
     query MyQuery {

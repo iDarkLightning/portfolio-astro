@@ -14,7 +14,7 @@ export const AboutSection: Component<{
     transition={transition(props.delay)}
   >
     <h2 class="text-2xl font-semibold">{props.heading}</h2>
-    <p>{props.content}</p>
+    <div class="flex flex-col gap-2" innerHTML={props.content} />
   </Motion.div>
 );
 
