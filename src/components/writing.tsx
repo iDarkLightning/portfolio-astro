@@ -44,7 +44,7 @@ export const ArticleYear: Component<{ year: string }> = (props) => (
     initial={{ ...(initial as any), transform: "translateX(-0.5rem)" }}
     animate={{ transform: "translateX(0)", opacity: 1 }}
     transition={transition(5)}
-    class="font-serif font-bold pt-4 text-accent-500"
+    class="font-serif font-bold lg:pt-4 text-accent-500"
   >
     {props.year}
   </Motion.p>
