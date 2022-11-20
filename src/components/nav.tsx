@@ -28,7 +28,7 @@ export const Nav: Component<{ currentRoute: string }> = (props) => (
           <a
             href={item.route}
             class={clsx(
-              "no-underline py-4 px-8 rounded-[6rem]",
+              "no-underline py-2 px-4 rounded-[6rem] lg:py-4 lg:px-8",
               item.route === props.currentRoute && "bg-[#222]"
             )}
           >

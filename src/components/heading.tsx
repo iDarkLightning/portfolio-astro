@@ -23,7 +23,7 @@ const transition = (multiplier: number): AnimationOptionsWithOverrides => ({
 export const Heading: Component<{ heading: string; sub: string }> = (props) => (
   <Motion.div initial={initial} animate={animate} transition={transition(0)}>
     <a href="/" class="no-underline">
-      <p class="text-sm uppercase font-mono">{"<-"} Index</p>
+      <p class="text-sm uppercase font-mono ">{"<-"} Index</p>
     </a>
     <h1 class="text-3xl font-bold">{props.heading}</h1>
     <p class="font-serif italic opacity-80">{props.sub}</p>

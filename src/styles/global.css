@@ -58,7 +58,7 @@ pre > code {
 
 h1,
 h2,
-p:not(.font-serif),
+p:not(.font-serif):not(.font-mono),
 a {
   font-family: Messina !important;
 }
