@@ -23,9 +23,9 @@ export const ProjectCard: Component<{ project: Project; idx: number }> = (
     >
       <div class="flex flex-col">
         <p class="font-semibold">{props.project.name}</p>
-        <p class="opacity-80 font-normal">{props.project.description}</p>
+        <p class="text-accent-300 font-normal">{props.project.description}</p>
       </div>
-      <p class="text-accent font-serif">{props.project.year}</p>
+      <p class="text-accent-500 font-serif">{props.project.year}</p>
     </Motion.a>
   );
 };

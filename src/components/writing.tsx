@@ -27,13 +27,13 @@ export const ArticleCard: Component<{ item: Article; idx: number }> = (
     >
       <div class="w-full flex gap-2 justify-between">
         <p class="font-semibold">{props.item.title}</p>
-        <p class="text-accent">
+        <p class="text-accent-500">
           {props.item.date
             .toLocaleDateString()
             .replace(`/${props.item.date.getFullYear()}`, "")}
         </p>
       </div>
-      <p class="opacity-80 font-normal">{props.item.description}</p>
+      <p class="text-accent-300 font-normal">{props.item.description}</p>
     </Motion.a>
   );
 };
@@ -41,9 +41,9 @@ export const ArticleCard: Component<{ item: Article; idx: number }> = (
 export const ArticleYear: Component<{ year: string }> = (props) => (
   <Motion.p
     initial={{ ...(initial as any), transform: "translateX(-0.5rem)" }}
-    animate={{ transform: "translateX(0)", opacity: 0.8 }}
+    animate={{ transform: "translateX(0)", opacity: 1 }}
     transition={transition(5)}
-    class="font-serif font-bold pt-4"
+    class="font-serif font-bold pt-4 text-accent-500"
   >
     {props.year}
   </Motion.p>

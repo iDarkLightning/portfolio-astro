@@ -12,6 +12,6 @@ export const Heading: Component<{ heading: string; sub: string }> = (props) => (
       <p class="text-sm uppercase font-mono ">{"<-"} Index</p>
     </a>
     <h1 class="text-3xl font-bold">{props.heading}</h1>
-    <p class="font-serif italic opacity-80">{props.sub}</p>
+    <p class="font-serif italic text-accent-300">{props.sub}</p>
   </Motion.div>
 );

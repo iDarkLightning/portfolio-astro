@@ -36,9 +36,9 @@ const HomeSubHeading: Component = () => (
 
 const HomeDescription: Component = () => (
   <Motion.p
-    class="opacity-80 flex flex-col gap-4"
+    class="text-accent-300 flex flex-col gap-4"
     initial={initial}
-    animate={{ ...(animate as any), opacity: 0.8 }}
+    animate={animate}
     transition={transition(3.1)}
   >
     <span class="md:max-w-2xl">
@@ -51,15 +51,12 @@ const HomeDescription: Component = () => (
 
 const HomeMore: Component = () => (
   <Motion.div
-    class="flex flex-col gap-4"
+    class="text-accent-100 flex flex-col gap-4"
     initial={initial}
-    animate={{ ...(animate as any), opacity: 0.9 }}
+    animate={animate}
     transition={transition(4.3)}
   >
-    <a
-      class="text-2xl flex gap-2 items-center opacity-90 no-underline"
-      href="/about"
-    >
+    <a class="text-2xl flex gap-2 items-center no-underline" href="/about">
       See More About Me
       <Arrow />
     </a>

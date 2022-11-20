@@ -19,7 +19,7 @@ export const Location: Component = () => {
 
   return (
     <div>
-      <p class="text-sm opacity-80 font-mono">{time} New York, US</p>
+      <p class="text-sm text-accent-400 font-mono">{time} New York, US</p>
     </div>
   );
 };
