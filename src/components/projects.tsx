@@ -9,17 +9,16 @@ import { animate, initial, transition } from "../lib/animations";
 export const ProjectCard: Component<{ project: any; idx: number }> = (
   props
 ) => (
-  <Motion.a
+  <Motion.div
     initial={initial}
     animate={animate}
     transition={transition(2)}
-    href={props.project.link}
-    class="no-underline w-full flex gap-2 justify-between items-center transition-all py-4 rounded-md"
+    class="no-underline w-full flex gap-2 justify-between items-center py-4 rounded-md"
   >
     <div class="flex flex-col">
       <p class="font-semibold">{props.project.name}</p>
       <p class="opacity-80 font-normal">{props.project.description}</p>
     </div>
     <p class="text-accent font-serif">{props.project.year}</p>
-  </Motion.a>
+  </Motion.div>
 );
