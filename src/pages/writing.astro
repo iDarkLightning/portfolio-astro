@@ -38,7 +38,7 @@ posts.forEach((post) => {
         <>
           <div class="flex gap-4 md:gap-16 flex-col md:flex-row">
             <ArticleYear year={key} client:load />
-            <div class="w-full flex flex-col gap-8">
+            <div class="w-full flex flex-col gap-8 hover-list">
               {value.map((item, idx) => (
                 <ArticleCard item={item} idx={idx} client:load />
               ))}

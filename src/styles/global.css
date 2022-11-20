@@ -87,3 +87,10 @@ a:not(.no-underline) {
     stroke-dashoffset: 0;
   }
 }
+
+.hover-list:hover > * > a {
+  opacity: 0.25 !important;
+}
+.hover-list > * > a:hover {
+  opacity: 1 !important;
+}

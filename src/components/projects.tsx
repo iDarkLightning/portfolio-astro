@@ -28,7 +28,7 @@ export const ProjectCard: Component<{ project: any; idx: number }> = (
     animate={animate}
     transition={transition(props.idx / 100 + (2 + props.idx))}
     href={props.project.link}
-    class="no-underline w-full flex gap-2 justify-between items-center hover:bg-[#222] transition-all p-4 rounded-md"
+    class="no-underline w-full flex gap-2 justify-between items-center transition-all py-4 rounded-md"
   >
     <div class="flex flex-col">
       <p class="font-semibold">{props.project.name}</p>
