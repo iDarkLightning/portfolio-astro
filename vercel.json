@@ -16,6 +16,10 @@
       "destination": "https://github.com/iDarkLightning"
     },
     {
+      "source": "/repo",
+      "destination": "https://github.com/iDarkLightning/portfolio-astro"
+    },
+    {
       "source": "/gh",
       "destination": "https://github.com/iDarkLightning"
     },
