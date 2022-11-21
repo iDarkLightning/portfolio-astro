@@ -1,5 +1,6 @@
 ---
 import { Divider } from "../components/divider";
+import Head from "../components/head.astro";
 import { Heading } from "../components/heading";
 import { Nav } from "../components/nav";
 import { ArticleCard, ArticleYear } from "../components/writing";
@@ -24,13 +25,18 @@ posts.forEach((post) => {
 });
 ---
 
-<Layout title="Writing">
+<Layout>
+  <Head
+    slot="head"
+    title="Writing - Nirjhor Nath"
+    description="A collection on my thoughts on tech, design, development, and life!"
+  />
   <Nav currentRoute="/writing" client:load />
   <div class="gap-6 flex flex-col py-6 pb:3 md:pb-6">
     <Heading
       client:load
       heading="My Writing"
-      sub="A collection of my thoughts on tech, design, development, and my life!"
+      sub="A collection of my thoughts on tech, design, development, and life!"
     />
     <hr class="opacity-60 border-accent-700" />
     {

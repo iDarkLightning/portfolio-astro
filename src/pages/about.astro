@@ -1,5 +1,6 @@
 ---
 import { AboutSection, Signature } from "../components/about";
+import Head from "../components/head.astro";
 import { Heading } from "../components/heading";
 import { Nav } from "../components/nav";
 import Layout from "../layouts/layout.astro";
@@ -8,7 +9,12 @@ import { getAbout } from "../lib/cms";
 const content = await getAbout();
 ---
 
-<Layout title="About" className="lg:w-9/12 xl:w-10/12">
+<Layout className="lg:w-9/12 xl:w-10/12">
+  <Head
+    slot="head"
+    title="About - Nirjhor Nath"
+    description="A little bit about me, the site, and everything in between"
+  />
   <Nav client:load currentRoute="/about" />
   <div
     class="flex flex-col-reverse items-center lg:flex-row lg:gap-24 h-full lg:absolute lg:top-[50vh] lg:translate-y-[-50%] pb-12"

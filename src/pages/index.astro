@@ -4,9 +4,15 @@ import "@fontsource/newsreader";
 import Layout from "../layouts/layout.astro";
 import { Home } from "../components/home";
 import { Nav } from "../components/nav";
+import Head from "../components/head.astro";
 ---
 
-<Layout title="Nirjhor Nath" className="h-full">
+<Layout className="h-full">
+  <Head
+    slot="head"
+    title="Nirjhor Nath"
+    description="Student, developer, and designer trying to make software that feels magical"
+  />
   <Nav currentRoute="/" client:load />
   <div
     class="flex flex-col justify-center gap-8 absolute top-[50vh] translate-y-[-50%]"
