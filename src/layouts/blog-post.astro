@@ -1,4 +1,5 @@
 ---
+import Head from "../components/head.astro";
 import Layout from "./layout.astro";
 
 export interface Props {
@@ -11,16 +12,27 @@ export interface Props {
 const {
   content: { title, description, pubDate },
 } = Astro.props;
+
+console.log(Astro.props);
 ---
 
-<Layout title={title} className="w-full lg:w-full xl:w-full">
-  <div class="py-12 w-full">
+<Layout className="w-full lg:w-full xl:w-full">
+  <Head slot="head" title={title} description={description} />
+  <div class="sticky top-0 left-0 h-12 apply-blur" aria-hidden="true"></div>
+  <div class="pb-12 w-full">
     <div class="flex flex-col gap-2">
+      <a href="/writing">Return to Writing</a>
       <h1 class="text-xl">{title}</h1>
       <p class="text-accent-300">{new Date(pubDate).toLocaleDateString()}</p>
     </div>
-    <article class="pt-6 w-full">
+    <article class="pt-6 w-full flex flex-col gap-4 text-accent-200 leading-7">
       <slot />
     </article>
   </div>
+  <style>
+    .apply-blur {
+      backdrop-filter: blur(3px);
+      opacity: 0.95;
+    }
+  </style>
 </Layout>

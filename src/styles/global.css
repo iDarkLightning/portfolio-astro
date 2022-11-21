@@ -38,6 +38,7 @@ h6 {
 
 h1 {
   @apply text-4xl;
+  color: theme("colors.white") !important;
 }
 
 h2 {

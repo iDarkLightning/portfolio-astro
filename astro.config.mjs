@@ -7,5 +7,10 @@ import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), mdx(), prefetch()]
+  markdown: {
+    shikiConfig: {
+      theme: "poimandres",
+    },
+  },
+  integrations: [tailwind(), solidJs(), mdx(), prefetch()],
 });
