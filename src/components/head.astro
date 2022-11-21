@@ -5,11 +5,7 @@ export interface Props {
   image?: string;
 }
 
-const {
-  title,
-  description,
-  image = new URL("/banner.png", Astro.url),
-} = Astro.props;
+const { title, description, image = "/banner.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
