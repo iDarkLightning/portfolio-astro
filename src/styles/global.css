@@ -45,6 +45,10 @@ h2 {
   @apply text-3xl;
 }
 
+h5 {
+  @apply text-xl;
+}
+
 code {
   @apply text-sm p-[0.125rem] rounded border border-neutral-800 text-neutral-100 bg-[#333];
 }
