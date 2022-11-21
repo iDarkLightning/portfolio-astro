@@ -26,7 +26,7 @@ posts.forEach((post) => {
 
 <Layout title="Writing">
   <Nav currentRoute="/writing" client:load />
-  <div class="gap-6 flex flex-col py-6">
+  <div class="gap-6 flex flex-col py-6 pb:3 md:pb-6">
     <Heading
       client:load
       heading="My Writing"
@@ -36,7 +36,7 @@ posts.forEach((post) => {
     {
       Object.entries(articles).map(([key, value], idx) => (
         <>
-          <div class="flex gap-4 md:gap-16 flex-col md:flex-row">
+          <div class="flex md:gap-16 flex-col md:flex-row">
             <ArticleYear year={key} client:load />
             <div class="w-full flex flex-col hover-list">
               {value.map((item, idx) => (
