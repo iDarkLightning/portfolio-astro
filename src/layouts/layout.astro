@@ -8,7 +8,9 @@ const { className } = Astro.props as Props;
 ---
 
 <html lang="en">
-  <slot name="head" />
+  <head>
+    <slot name="head" />
+  </head>
   <body>
     <main>
       <section
