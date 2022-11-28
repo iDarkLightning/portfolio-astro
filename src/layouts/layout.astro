@@ -12,6 +12,14 @@ const { className } = Astro.props as Props;
     <slot name="head" />
   </head>
   <body>
+    <script>
+      import flamethrower from "flamethrower-router";
+
+      export const router = flamethrower({
+        pageTransitions: true,
+        prefetch: "visible",
+      });
+    </script>
     <main>
       <section
         class:list={[
