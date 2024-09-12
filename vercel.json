@@ -24,6 +24,10 @@
       "destination": "https://github.com/iDarkLightning"
     },
     {
+      "source": "/ln",
+      "destination": "https://www.linkedin.com/in/nirjhor-nath-b82317232/"
+    },
+    {
       "source": "/github/:slug*",
       "destination": "https://github.com/iDarkLightning/:slug*"
     },
